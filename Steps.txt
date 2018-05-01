@@ -1,0 +1,29 @@
+1   Configuration of hibernate.cfg.xml
+
+2   Maven database driver import
+
+3   Writing the model class to be mapped.
+
+4   Creating data model
+
+    1- This is the model class that Hibernate needs to persist*/
+
+    2- Now we will use annotations to give Hibernate clue*/
+
+    3- Private key assignment
+
+    4- We need an object initialization code.
+
+5   Creating a session factory
+
+6   Making sure that we are using the production cfg.xml rather than generated target cfg.xml.
+
+7   Database generation mode:
+    <property name="hbm2ddl.auto">update</property>
+
+8   At database model, primary key generation  method (auto increment) is really important. Check GenerationType Settings.
+
+    @GeneratedValue(strategy= GenerationType.AUTO)
+
+
+
