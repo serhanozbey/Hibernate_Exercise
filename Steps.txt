@@ -1,6 +1,6 @@
-1   Configuration of hibernate.cfg.xml
+1   Configuration of hibernate.cfg.xml (placing it to resources, if maven.)
 
-2   Maven database driver import
+2   Maven database driver import (be careful with the versions)
 
 3   Writing the model class to be mapped.
 

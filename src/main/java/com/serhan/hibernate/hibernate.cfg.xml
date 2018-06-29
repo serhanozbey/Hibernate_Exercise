@@ -11,15 +11,16 @@
 
         <property name="show_sql">true</property>
 
-        <property name="connection.url">jdbc:postgresql://localhost:5432/HibernateDB</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/HibernatePractise</property>
 
         <property name="connection.username">postgres</property>
 
         <property name="connection.password">postgres</property>
         <property name="hbm2ddl.auto">update</property>
+        <!--TODO: release mode, like idle time and connection closing-->
+        <!--<property name="hibernate.connection.release_mode"></property>-->
 
-        <!-- DB schema will be updated if needed -->
-<!--All of the mapped classes should be listed here.-->
+        <!--All of the mapped classes should be listed here.-->
         <mapping class="com.serhan.hibernate.model.UserDetails"/>
     </session-factory>
 </hibernate-configuration>

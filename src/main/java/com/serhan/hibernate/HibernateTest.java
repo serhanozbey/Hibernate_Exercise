@@ -9,12 +9,14 @@ import org.hibernate.cfg.Configuration;
 public class HibernateTest {
     
     public static void main(String[] args) {
+        
         UserDetails user1 = new UserDetails();
         user1.setUsername("serhanozb");
         UserDetails user2 = new UserDetails();
         user2.setUsername("yunus");
         UserDetails user3 = new UserDetails();
         user3.setUsername("deniz");
+    
         //we can use factory method to have new sessions to do operations.
         SessionFactory sessionFactory = new Configuration().configure("com/serhan/hibernate/hibernate.cfg.xml").buildSessionFactory();
         //we will use session objects to save our model objects.
@@ -27,9 +29,8 @@ public class HibernateTest {
         session.save(user3);
         //committing the transaction
         session.getTransaction().commit();
-        
         //Hibernate is gonna create the table for us.
-        
+        sessionFactory.close();
     }
     
 }
