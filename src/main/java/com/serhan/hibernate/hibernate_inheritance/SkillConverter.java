@@ -11,6 +11,11 @@ public class SkillConverter implements AttributeConverter<SkillInterface,String>
     
     @Override
     public SkillInterface convertToEntityAttribute(String dbData) {
-        return new NoSkill();
+        if (dbData.equals("noskill")) {
+            return new NoSkill();
+        } else if (dbData.equals("axe")) {
+            return new Axe();
+        }
+        return null;
     }
 }

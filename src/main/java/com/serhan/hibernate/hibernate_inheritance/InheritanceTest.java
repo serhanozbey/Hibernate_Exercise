@@ -24,11 +24,14 @@ public class InheritanceTest {
         //committing the transaction
         session.getTransaction().commit();
         //Hibernate is gonna create the table for us.
+        session.close();
     
-        Creature retrievedCreature1 = session.get(Creature.class, 1);
-        Creature retrievedCreature2 = session.get(Creature.class, 2);
+        Session session1 = sessionFactory.openSession();
+        Creature retrievedCreature1 = session1.get(Creature.class, 1);
+        Creature retrievedCreature2 = session1.get(Creature.class, 2);
         retrievedCreature1.getSkill().attack();
         retrievedCreature2.getSkill().attack();
+        session1.close();
         sessionFactory.close();
     
     }
