@@ -3,7 +3,7 @@ package com.serhan.hibernate.hibernate_inheritance;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+
 public class Axe implements SkillInterface {
     
     @Override
