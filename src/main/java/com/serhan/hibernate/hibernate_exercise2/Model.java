@@ -1,6 +1,7 @@
 package com.serhan.hibernate.hibernate_exercise2;
 
 
+import org.hibernate.annotations.GeneratorType;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.jws.WebParam;
@@ -36,8 +37,8 @@ public class Model extends SuperModel implements Serializable {
     public SubClass subClass;
     
     //FIXME: not working properly.
-    //@ElementCollection
-    //public List<String> list;
+    @ElementCollection
+    public List<@NotNull @Size(min = 4) @NotEmpty String> list = new ArrayList<>();
     
     public Model() {
         //totally valid class.
@@ -45,7 +46,6 @@ public class Model extends SuperModel implements Serializable {
         this.money = 15;
         this.isModel = true;
         this.subClass = new SubClass();
-        //list.add("hello");
     }
     
     public Model(@NotNull @Size(min = 3, max = 8) String name, @Min(10) int money) {
@@ -53,7 +53,7 @@ public class Model extends SuperModel implements Serializable {
         this.money = money;
         this.isModel = true;
         this.subClass = new SubClass();
-        //list.add("hello");
+        this.list.add("placeholder");
     }
     
     public Model(@NotNull @Size(min = 3, max = 8) String name, @Min(10) int money, @AssertTrue boolean isModel) {
@@ -66,8 +66,8 @@ public class Model extends SuperModel implements Serializable {
         this.superModelName = superModelName;
     }
     
-   //public Model(List<@NotNull @Size(min = 3) @NotEmpty String> list) {
-   //    this();
-   //    this.list = list;
-   //}
+   public Model(List<@NotNull @Size(min = 4) @NotEmpty String> list) {
+       this();
+       this.list = list;
+   }
 }

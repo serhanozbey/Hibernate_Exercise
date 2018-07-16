@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 class ModelTest {
-    
+    //It is a good practise to wrap all statements (i.e. SELECT, UPDATE, DELETE) in a transaction. (pointless in CREATE statements)
     private static SessionFactory sessionFactory;
     private static Session session;
     private static Validator validator;
@@ -72,20 +72,24 @@ class ModelTest {
         assertThrows(ConstraintViolationException.class, () -> session.save(model));
     }
     
-    //@Test
-    //void nestedElementNotValid(){
-    //    ArrayList<String> list = new ArrayList<>();
-    //    list.add("eb");
-    //    Model model = new Model(list);
-    //    assertThrows(ConstraintViolationException.class, () -> session.save(model));
-    //}
+    @Test
+    void nestedElementNotValid(){
+        ArrayList<String> list = new ArrayList<>();
+        list.add("eb");
+        Model model = new Model(list);
+        assertThrows(ConstraintViolationException.class, () -> session.save(model));
+    }
     
     @Test
     void successfullWrite(){
+        session.beginTransaction();
         Model model1 = new Model("serhan", 20);
+        model1.list.add("model1");
         Model model2 = new Model("dedede", 30);
+        model2.list.add("model2");
         session.save(model1);
         session.save(model2);
+        session.getTransaction().commit();
     }
     
     @AfterEach
