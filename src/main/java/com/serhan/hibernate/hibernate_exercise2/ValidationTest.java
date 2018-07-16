@@ -12,15 +12,30 @@ public class ValidationTest {
     
     public static void main(String[] args) {
         SessionFactory sessionFactory = new Configuration().configure("com/serhan/hibernate/hibernate_exercise2/hibernate.cfg.xml").buildSessionFactory();
-        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-        Validator validator = factory.getValidator();
         Session session = sessionFactory.openSession();
         try {
-            Model model = new Model("se", 10);
-            session.save(model);
+            session.beginTransaction();
+            Model model1 = new Model("serhan", 10);
+            session.save(model1);
+            session.getTransaction().commit();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    
+        try {
+            session.beginTransaction();
+            Model model2 = new Model("se", 10);
+            session.save(model2);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        System.out.println("end");
+        
+        
+        session.close();
+        sessionFactory.close();
     }
     
 }

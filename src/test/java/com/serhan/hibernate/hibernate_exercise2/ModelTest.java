@@ -18,6 +18,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ModelTest {
     //It is a good practise to wrap all statements (i.e. SELECT, UPDATE, DELETE) in a transaction. (pointless in CREATE statements)
+    //IMPORTANT about transactions:
+        //we are not using session.beginTransaction before every method, as we are expecting exceptions at our test methods. So it is only used locally at successfullWrite test.
+    
+    
     private static SessionFactory sessionFactory;
     private static Session session;
     private static Validator validator;
