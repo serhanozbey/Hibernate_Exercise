@@ -1,7 +1,4 @@
-package com.serhan.hibernate.hibernate_inheritance;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
+package com.serhan.hibernate.hibernate_exercise1.hibernate_inheritance;
 
 
 public class Axe implements SkillInterface {

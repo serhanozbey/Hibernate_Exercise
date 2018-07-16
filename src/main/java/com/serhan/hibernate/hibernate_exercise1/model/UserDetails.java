@@ -1,4 +1,4 @@
-package com.serhan.hibernate.model;
+package com.serhan.hibernate.hibernate_exercise1.model;
 
 import com.sun.istack.NotNull;
 

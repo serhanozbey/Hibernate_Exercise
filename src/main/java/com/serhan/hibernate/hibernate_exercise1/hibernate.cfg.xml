@@ -16,12 +16,11 @@
         <property name="connection.username">postgres</property>
 
         <property name="connection.password">postgres</property>
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
         <!--TODO: release mode, like idle time and connection closing-->
         <!--<property name="hibernate.connection.release_mode"></property>-->
 
         <!--All of the mapped classes should be listed here.-->
-        <mapping class="com.serhan.hibernate.hibernate_inheritance.Cat"/>
-        <mapping class="com.serhan.hibernate.hibernate_inheritance.Dog"/>
+        <mapping class="com.serhan.hibernate.hibernate_exercise1.model.UserDetails"/>
     </session-factory>
 </hibernate-configuration>

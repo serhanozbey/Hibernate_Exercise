@@ -1,7 +1,4 @@
-package com.serhan.hibernate.hibernate_inheritance;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
+package com.serhan.hibernate.hibernate_exercise1.hibernate_inheritance;
 
 
 public class NoSkill implements SkillInterface{

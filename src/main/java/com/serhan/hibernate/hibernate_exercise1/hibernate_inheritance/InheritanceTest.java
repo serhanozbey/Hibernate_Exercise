@@ -1,4 +1,4 @@
-package com.serhan.hibernate.hibernate_inheritance;
+package com.serhan.hibernate.hibernate_exercise1.hibernate_inheritance;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,7 +10,7 @@ public class InheritanceTest {
         Creature creature1 = new Cat();
         Creature creature2 = new Dog();
         //we can use factory method to have new sessions to do operations.
-        SessionFactory sessionFactory = new Configuration().configure("com/serhan/hibernate/hibernate_inheritance/hibernate.cfg.xml").buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure("com/serhan/hibernate/hibernate_exercise1/hibernate_inheritance/hibernate.cfg.xml").buildSessionFactory();
         //we will use session objects to save our model objects.
         Session session = sessionFactory.openSession();
         //we will use this transaction to perform a save

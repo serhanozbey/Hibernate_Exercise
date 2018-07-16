@@ -1,13 +1,13 @@
-package com.serhan.hibernate;
+package com.serhan.hibernate.hibernate_exercise1;
 
-import com.serhan.hibernate.model.UserDetails;
+import com.serhan.hibernate.hibernate_exercise1.model.UserDetails;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 
 public class HibernateTest {
-    
+    //TODO: to be transferred to a JUnit test.
     public static void main(String[] args) {
         
         UserDetails user1 = new UserDetails();
@@ -18,7 +18,7 @@ public class HibernateTest {
         user3.setUsername("deniz");
     
         //we can use factory method to have new sessions to do operations.
-        SessionFactory sessionFactory = new Configuration().configure("com/serhan/hibernate/hibernate.cfg.xml").buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure("com/serhan/hibernate/hibernate_exercise1/hibernate.cfg.xml").buildSessionFactory();
         //we will use session objects to save our model objects.
         Session session = sessionFactory.openSession();
         //we will use this transaction to perform a save
